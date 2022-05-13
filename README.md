@@ -2,8 +2,8 @@ Number and name of feature: Gallery or Horns.
 
 Estimate of time needed to complete: 5 hours
 
-Start time: 2:38 pm
+Start time: 2 pm
 
-Finish time: 5:45 pm
+Finish time: 5:31 pm
 
-Actual time needed to complete: just over 3 hours
+Actual time needed to complete: 3 hours and 31 minutes

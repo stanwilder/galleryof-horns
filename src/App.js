@@ -4,7 +4,7 @@ import Header from './Header.js'
 import Footer from './Footer.js'
 import beastData from './data.json'
 import SelectedBeast from './SelectedBeast.js';
-// import HornedBeast from './HornedBeast.js';
+import Forms from './Forms.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -13,7 +13,8 @@ class App extends React.Component {
       showModal: false,
       title: '',
       img: '',
-      description: ''
+      description: '',
+      beastData: beastData
 
     }
   }
@@ -34,15 +35,36 @@ class App extends React.Component {
     })
   }
 
+  handleSelect = (e) => {
+    let select = e.target.value;
+    console.log(select);
+    if (select === "one") {
+      let odds = beastData.filter(number => number.horns === 1);
+      console.log(odds);
+      this.setState({ beastData: odds})
+    } else if (select === "two") {
+      let evens = beastData.filter(number => number.horns === 2);
+      console.log(evens);
+      this.setState({ beastData: evens})
+    } else {
+      this.setState({ beastData : beastData})
+    }
+       
+
+  }
+
 
   render() {
 
     return (
       <>
         <Header />
+        <Forms
+        handleSelect={this.handleSelect}
+        />
 
         <Main
-          data={beastData}
+          data={this.state.beastData}
           openModal={this.openModal}
         />
         <SelectedBeast
